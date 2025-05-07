@@ -1,0 +1,20 @@
+<div class="calculator-wrapper">
+    <div class="operation">{{ accumulator }} {{ operator }}</div>
+    <div class="display">{{ display }}</div>
+
+    <div class="grid">
+        <ng-container *ngFor="let row of buttons">
+            <ng-container *ngFor="let btn of row">
+                <button
+                        [ngClass]="{
+            orange: btn.type === 'orange',
+            light: btn.type === 'light'
+          }"
+                        (click)="onClick(btn.label)"
+                >
+                    {{ btn.label }}
+                </button>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>
